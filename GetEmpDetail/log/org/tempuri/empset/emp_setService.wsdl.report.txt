@@ -1,0 +1,23 @@
+
+
+Importing file: /Users/guruvishnusaravanan/Downloads/emp_setService.wsdl
+
+The WSDL import will proceed with bindings emp_setSOAP_HTTP_Binding.
+Creating wsdl schema document for file:///Users/guruvishnusaravanan/Downloads/emp_setService.wsdl.
+Parsing wsdl binding {http://tempuri.org/emp_set}emp_setSOAP_HTTP_Binding.
+Parsing wsdl binding input GetEmployeeDetails.
+Parsing wsdl binding output GetEmployeeDetails.
+Parsing wsdl binding fault GetEmployeeDetails_Fault.
+Processing doc style for operation GetEmployeeDetails.
+Populating WSDL schema emp_setService.xsd.
+Creating file emp_setService.xsd in the workspace.
+Creating file emp_setService_InlineSchema1.xsd in the workspace.
+Copying source WSDL emp_setService.wsdl to emp_setService.wsdl.
+
+Elapsed time processing this message definition file: 0.041 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

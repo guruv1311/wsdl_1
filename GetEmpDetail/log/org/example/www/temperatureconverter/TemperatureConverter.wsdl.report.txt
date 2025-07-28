@@ -1,0 +1,21 @@
+
+
+Importing file: /Users/guruvishnusaravanan/IBM/ACET12/workspace/TemperatureConverter/TemperatureConverter.wsdl
+
+The WSDL import will proceed with bindings TemperatureConverterSOAP12.
+Creating wsdl schema document for file:///Users/guruvishnusaravanan/IBM/ACET12/workspace/TemperatureConverter/TemperatureConverter.wsdl.
+Parsing wsdl binding {http://www.example.org/TemperatureConverter/}TemperatureConverterSOAP12.
+Parsing wsdl binding input NewOperation.
+Parsing wsdl binding output NewOperation.
+Processing rpc style for operation NewOperation.
+Populating WSDL schema TemperatureConverter.xsd.
+Creating file TemperatureConverter.xsd in the workspace.
+Copying source WSDL TemperatureConverter.wsdl to TemperatureConverter.wsdl.
+
+Elapsed time processing this message definition file: 0.081 seconds
+Number of warnings for this message definition file: 0
+
+
+Number of files processed: 1
+
+

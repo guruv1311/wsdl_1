@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://tempuri.org/emp_set" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:mrm="http://tempuri.org/emp_set" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/emp_set" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/emp_set">
+        
+  <xsd:complexType name="GetEmployeeRequest">
+            
+    <xsd:sequence>
+                
+      <xsd:element ref="mrm:Empid"/>
+              
+    </xsd:sequence>
+          
+  </xsd:complexType>
+        
+  <xsd:complexType name="GetEmployeeResponse">
+            
+    <xsd:sequence>
+                
+      <xsd:element ref="mrm:Fname"/>
+                
+      <xsd:element ref="mrm:Lname"/>
+                
+      <xsd:element ref="mrm:Email"/>
+                
+      <xsd:element ref="mrm:Contact"/>
+                
+      <xsd:element ref="mrm:Title"/>
+                
+      <xsd:element ref="mrm:Salary"/>
+              
+    </xsd:sequence>
+          
+  </xsd:complexType>
+        
+  <xsd:complexType name="Fault">
+            
+    <xsd:sequence>
+                
+      <xsd:element ref="mrm:FaultCode"/>
+                
+      <xsd:element ref="mrm:FaultString"/>
+              
+    </xsd:sequence>
+          
+  </xsd:complexType>
+        
+  <xsd:element name="Empid" type="xsd:string"/>
+        
+  <xsd:element name="Fname" type="xsd:string"/>
+        
+  <xsd:element name="Lname" type="xsd:string"/>
+        
+  <xsd:element name="Email" type="xsd:string"/>
+        
+  <xsd:element name="Contact" type="xsd:string"/>
+        
+  <xsd:element name="Salary" type="xsd:string"/>
+        
+  <xsd:element name="Title" type="xsd:string"/>
+        
+  <xsd:element name="FaultCode" type="xsd:int"/>
+        
+  <xsd:element name="FaultString" type="xsd:string"/>
+        
+  <xsd:element ibmSchExtn:docRoot="true" name="GetEmployeeRequest" type="mrm:GetEmployeeRequest"/>
+        
+  <xsd:element ibmSchExtn:docRoot="true" name="GetEmployeeResponse" type="mrm:GetEmployeeResponse"/>
+        
+  <xsd:element ibmSchExtn:docRoot="true" name="Fault" type="mrm:Fault"/>
+      
+</xsd:schema>
