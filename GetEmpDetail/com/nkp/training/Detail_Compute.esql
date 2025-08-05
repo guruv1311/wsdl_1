@@ -7,7 +7,7 @@ CREATE COMPUTE MODULE Detail_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
 		DECLARE id CHAR InputRoot.SOAP.Body.empNS:GetEmployeeRequest.empNS:Empid;
-		IF id = '1' THEN
+		IF id = 1 THEN
 			CREATE FIELD OutputRoot.SOAP.Body.empNS:GetEmployeeResponse;
 			DECLARE outRespRef REFERENCE TO OutputRoot.SOAP.Body.empNS:GetEmployeeResponse;
 			
