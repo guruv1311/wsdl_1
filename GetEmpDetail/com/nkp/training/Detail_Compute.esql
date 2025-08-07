@@ -4,28 +4,27 @@ DECLARE soapNS NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
 DECLARE empNS NAMESPACE 'http://tempuri.org/emp_set';
 
 CREATE COMPUTE MODULE Detail_Compute
-	CREATE FUNCTION Main() RETURNS BOOLEAN
-	BEGIN
-		DECLARE id CHAR InputRoot.SOAP.Body.empNS:GetEmployeeRequest.empNS:Empid;
-		IF id = 1 THEN
-			CREATE FIELD OutputRoot.SOAP.Body.empNS:GetEmployeeResponse;
-			DECLARE outRespRef REFERENCE TO OutputRoot.SOAP.Body.empNS:GetEmployeeResponse;
-			
-			SET outRespRef.empNS:Fname = 'John';
-			SET outRespRef.empNS:Lname = 'Doe';
-			SET outRespRef.empNS:Email = 'john.doe@example.com';
-			SET outRespRef.empNS:Contact = '123-456-7890';
-			SET outRespRef.empNS:Title = 'Software Engineer';
-			SET outRespRef.empNS:Salary = '80000';
-		ELSE
-			CREATE FIELD OutputRoot.SOAP.Body.soapNS:Fault;
-			DECLARE FaultRef REFERENCE TO OutputRoot.SOAP.Body.soapNS:Fault;
-			
-			SET FaultRef.faultcode = 'SOAP001';
-			SET FaultRef.faultstring = 'No Details Found for Empid ' || COALESCE(id, 'NULL');
-		END IF;
-		
-		RETURN TRUE;
-	END;
-	
+  CREATE FUNCTION Main() RETURNS BOOLEAN
+  BEGIN
+    DECLARE id CHAR InputRoot.SOAP.Body.empNS:GetEmployeeRequest.empNS:Empid;
+
+    IF id = '1' THEN
+      CREATE FIELD OutputRoot.SOAP.Body.empNS:GetEmployeeResponse;
+      
+      SET OutputRoot.SOAP.Body.empNS:GetEmployeeResponse.empNS:Fname   = 'John';
+      SET OutputRoot.SOAP.Body.empNS:GetEmployeeResponse.empNS:Lname   = 'Doe';
+      SET OutputRoot.SOAP.Body.empNS:GetEmployeeResponse.empNS:Email   = 'john.doe@example.com';
+      SET OutputRoot.SOAP.Body.empNS:GetEmployeeResponse.empNS:Contact = '1234567890';
+      SET OutputRoot.SOAP.Body.empNS:GetEmployeeResponse.empNS:Title   = 'Engineer';
+      SET OutputRoot.SOAP.Body.empNS:GetEmployeeResponse.empNS:Salary  = '100000';
+
+    ELSE
+      CREATE FIELD OutputRoot.SOAP.Body.soapNS:Fault;
+      
+      SET OutputRoot.SOAP.Body.soapNS:Fault.faultcode   = 'SOAP001';
+      SET OutputRoot.SOAP.Body.soapNS:Fault.faultstring = 'No Details Found for Empid ' || COALESCE(id, 'NULL');
+    END IF;
+
+    RETURN TRUE;
+  END;
 END MODULE;
